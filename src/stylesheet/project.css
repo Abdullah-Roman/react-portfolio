@@ -1,0 +1,105 @@
+.laptop {
+  font-size: 8rem;
+}
+
+@media (max-width: 600px) {
+  .laptop {
+    margin-top: 3rem;
+  }
+}
+
+.project {
+  margin-top: 100px;
+}
+
+.pic {
+  border: 1px solid gray;
+  border-radius: 10px;
+  height: 300px;
+  width: 300px !important;
+  position: relative;
+  animation: pic-animation 10s linear infinite;
+}
+
+@keyframes pic-animation {
+  0% {
+    transform: rotate(-5deg);
+  }
+  25% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+
+.pic:hover {
+  animation-play-state: paused;
+}
+
+.pic img {
+  height: 300px;
+  width: 150px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.primary {
+  background-color: #da2020;
+  color: white;
+  border: none;
+  padding: 7px 20px;
+  border-radius: 20px;
+  margin-left: 1rem;
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.primary::after {
+  content: "";
+  position: absolute;
+  border-radius: 20px;
+  z-index: -1;
+  height: 100%;
+  width: 0;
+  top: 0;
+  left: 0;
+  background-color: blue;
+  transition: 1s;
+}
+
+.primary:hover::after {
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 255, 0.66);
+  color: white;
+  border-radius: 10px;
+  opacity: 0;
+  transition: all 1s linear;
+  height: 100%;
+}
+
+.pic:hover .overlay {
+  opacity: 1;
+  transform: scale(1.05);
+}

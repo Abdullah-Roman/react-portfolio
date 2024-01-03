@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+.intro {
+  height: 120vh;
+  /* max-width: 1320px; */
+  width: 100%;
+}
+.para {
+  color: white;
+  text-shadow: 0 0 10px gray;
+  height: 200px;
+  /* width: 100vw; */
+  /* max-width: 1320px; */
+}
+
+.primary {
+  background-color: #da2020;
+  color: white;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 20px;
+  margin-left: 1rem;
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.primary::after {
+  content: "";
+  position: absolute;
+  border-radius: 20px;
+  z-index: -1;
+  height: 100%;
+  width: 0;
+  top: 0;
+  left: 0;
+  background-color: blue;
+  transition: 1s;
+}
+
+.primary:hover::after {
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  width: 100%;
+}
+.heading {
+  font-family: "Lato", sans-serif;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: white;
+  text-shadow: 0 0 10px gray;
+}
+
+@media (max-width: 600px) {
+  .heading {
+    font-size: 1.5rem;
+  }
+  .bio {
+    font-size: 0.8rem;
+  }
+  .primary {
+    width: 7rem;
+    height: 1.5rem;
+    font-size: 10px;
+  }
+  .last {
+    font-size: 0.6em;
+  }
+}
+
+.react {
+  margin-top: 4rem;
+}
+
+.exp {
+  background-color: orange;
+  color: white;
+}
+
+.who {
+  margin: 3rem;
+}
+
+.last {
+  width: 30%;
+  color: #000;
+  padding: 10px;
+  /* margin-left: 8rem; */
+}
